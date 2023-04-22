@@ -18,6 +18,10 @@ dist-ssr
 !.yarn/plugins
 .pnp.*
 
+# Firebase
+.firebase/*.cache
+.firebase/*.log
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
