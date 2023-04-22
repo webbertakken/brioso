@@ -1,17 +1,18 @@
-import React from 'react'
-import Panel from "../Panel.tsx";
+import Panel from '../Panel.tsx'
 
-interface Props {
-}
+interface Props {}
 
 const PartsPanel = ({}: Props): JSX.Element => {
-  return <Panel title="Parts">
-    <ul>
-      <li>Part 1</li>
-      <li>Part 2</li>
-      <li>Part 3</li>
-    </ul>
-  </Panel>;
+  return (
+    <Panel title="Parts">
+      <ul>
+        <li>Part 1</li>
+        <li>Part 2</li>
+        <li>Part 3</li>
+        <li>Part 4</li>
+      </ul>
+    </Panel>
+  )
 }
 
-export default PartsPanel;
+export default PartsPanel
