@@ -1,0 +1,19 @@
+.columns {
+  display: table-row;
+  background: linear-gradient(180deg, #222222 0%, #333333 50%);
+}
+
+.columns > div {
+  display: table-cell;
+  padding: 0.25rem;
+  border-right: 1px solid rgba(204, 204, 204, .1);
+  border-bottom: 1px solid rgba(204, 204, 204, .1);
+  text-align: center;
+  font-size: 80%;
+  font-weight: bold;
+}
+
+.columns .title {
+  text-align: left;
+  padding-left: 0.5rem;
+}
