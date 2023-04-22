@@ -10,7 +10,12 @@ const PartsPanel = ({}: Props): JSX.Element => {
       <div style={{ display: 'table' }}>
         <Columns />
         <Part title={'voice 1'} />
-        <Part title={'voice 2 very long title'} muted />
+        <Part
+          title={
+            'voice 2 Et harum quidem rerum facilis est et expedita distinctio nam libero tempore'
+          }
+          muted
+        />
         <Part title={'voice 3'} />
         <Part title={'piano'} />
       </div>

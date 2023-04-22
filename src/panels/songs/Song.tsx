@@ -1,12 +1,14 @@
 import styles from './Song.module.css'
 
-interface Props {}
+interface Props {
+  title: string
+}
 
-const Song = ({}: Props): JSX.Element => {
+const Song = ({ title }: Props): JSX.Element => {
   return (
     <div className={styles.song}>
       <div className={styles.icon}>🎵</div>
-      <div className={styles.title}>Every Time I look at You - C Maj</div>
+      <div className={styles.title}>{title}</div>
     </div>
   )
 }
