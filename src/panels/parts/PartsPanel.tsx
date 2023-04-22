@@ -4,7 +4,7 @@ interface Props {}
 
 const PartsPanel = ({}: Props): JSX.Element => {
   return (
-    <Panel title="Parts">
+    <Panel title="Parts" icon={'🔸'}>
       <ul>
         <li>Part 1</li>
         <li>Part 2</li>
