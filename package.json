@@ -7,8 +7,16 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write src functions",
+    "type-check": "tsc --pretty --noEmit",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": "bash -c tsc --skipLibCheck --noEmit",
+    "*.@(ts|tsx|js|jsx)": "eslint --max-warnings 0",
+    "*.@(ts|tsx|js|jsx|json|jsonc|json5|md|mdx|yaml|yml)": "prettier --write"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -29,7 +37,9 @@
     "eslint": "^8.39.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "husky": "=8.0.3",
     "jsdom": "^21.1.1",
+    "lint-staged": "=13.2.1",
     "prettier": "^2.8.7",
     "typescript": "^5.0.4",
     "vite": "^4.3.0",
