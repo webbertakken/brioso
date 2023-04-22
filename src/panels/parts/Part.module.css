@@ -1,0 +1,15 @@
+.part {
+  display: table-row;
+}
+
+.part > div {
+  display: table-cell;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(204, 204, 204, .25);
+  border-right: 1px solid rgba(204, 204, 204, .25);
+  text-align: center;
+}
+
+.part .title {
+  text-align: left;
+}

@@ -1,16 +1,19 @@
 import Panel from '../Panel.tsx'
+import Columns from './Columns.tsx'
+import Part from './Part.tsx'
 
 interface Props {}
 
 const PartsPanel = ({}: Props): JSX.Element => {
   return (
     <Panel title="Parts" icon={'🔸'}>
-      <ul>
-        <li>Part 1</li>
-        <li>Part 2</li>
-        <li>Part 3</li>
-        <li>Part 4</li>
-      </ul>
+      <div style={{ display: 'table' }}>
+        <Columns />
+        <Part title={'voice 1'} />
+        <Part title={'voice 2 very long title'} muted />
+        <Part title={'voice 3'} />
+        <Part title={'piano'} />
+      </div>
     </Panel>
   )
 }
