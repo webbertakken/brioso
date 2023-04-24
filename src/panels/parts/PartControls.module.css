@@ -1,0 +1,22 @@
+.partControls {
+  display: table;
+  padding-bottom: .75rem;
+}
+
+.row {
+  display: table-row;
+}
+
+.row > div {
+  display: table-cell;
+  padding: .5rem;
+}
+
+.title {
+  width: 7rem;
+  text-align: right;
+}
+
+.controls {
+  color: #aaa
+}

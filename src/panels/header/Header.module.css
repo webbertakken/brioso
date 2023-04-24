@@ -3,7 +3,6 @@
   height: 120px;
   display: flex;
   justify-content: space-between;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   border-width: 0.25rem 0.5rem 0.25rem;
   border-color: #444444;
   border-style: solid;
