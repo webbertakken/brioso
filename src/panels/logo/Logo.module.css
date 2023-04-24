@@ -7,4 +7,10 @@
   color: #555555;
   font-size: 3rem;
   font-family: 'Poltawski Nowy', serif;
+  gap: 1rem;
+}
+
+.logo > div {
+  display: flex;
+  align-items: center;
 }
