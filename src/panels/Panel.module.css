@@ -6,7 +6,7 @@
   flex-grow: 1;
   max-width: 50%;
   min-width: 33.333%;
-  border-color: #111111;
+  border-color: #333;
   border-style: solid;
   border-width: 0 1px 1px 0;
 }
@@ -17,11 +17,12 @@
   justify-content: center;
   align-items: baseline;
   gap: 0.25em;
-  margin: -0.5em -0.5em 0;
+  margin: -0.5rem -0.5rem 0;
   background: linear-gradient(180deg, #555555 0%, #444444 50%);
   padding: 0.25em;
   font-size: 80%;
   font-weight: bold;
+  border-top: 1px solid #333;
 }
 
 .body {
