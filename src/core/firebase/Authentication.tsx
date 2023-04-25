@@ -11,10 +11,8 @@ import cx from 'classnames'
 import { useNotification } from '../hooks/useNotification.tsx'
 
 // @ts-ignore
-import firebase from 'firebase/compat'
-import User = firebase.User
-import UserInfo = firebase.UserInfo
-import Auth = firebase.auth.Auth
+import type { User, UserInfo, auth } from 'firebase/compat'
+type Auth = auth.Auth
 
 export const AuthWrapper = ({
   children,
