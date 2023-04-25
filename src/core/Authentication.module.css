@@ -1,0 +1,43 @@
+.providerButton {
+  display: block;
+  width: 191px;
+  height: 46px;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.google {
+  background: url('./assets/btn_google_signin_dark_normal_web.png');
+}
+
+.google:disabled {
+  background: url('./assets/btn_google_signin_dark_disabled_web.png');
+}
+
+.google:hover {
+  background: url('./assets/btn_google_signin_dark_focus_web.png');
+}
+
+.google:focus {
+  background: url('./assets/btn_google_signin_dark_pressed_web.png');
+}
+
+@media (prefers-color-scheme: light) {
+  .google {
+    background: url('./assets/btn_google_signin_light_normal_web.png');
+  }
+
+  .google:disabled {
+    background: url('./assets/btn_google_signin_light_disabled_web.png');
+  }
+
+  .google:hover {
+    background: url('./assets/btn_google_signin_light_focus_web.png');
+  }
+
+  .google:focus {
+    background: url('./assets/btn_google_signin_light_pressed_web.png');
+  }
+}
