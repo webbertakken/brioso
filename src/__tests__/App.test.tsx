@@ -9,7 +9,7 @@ describe('App', async () => {
   it('renders correctly', async () => {
     // Arrange
     await render(<App />)
-    const h1 = await screen.queryByText('Vite + React')
+    const h1 = await screen.queryByText('Brioso')
 
     // Assert
     expect(h1).toBeInTheDocument()

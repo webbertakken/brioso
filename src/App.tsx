@@ -1,31 +1,17 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import ErrorPage from './pages/error/ErrorPage.tsx'
-import RootLayout from './pages/root/RootLayout.tsx'
-import Practice from './pages/practice/Practice.tsx'
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <RootLayout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: '/',
-        element: <div>Login first</div>,
-      },
-      {
-        path: '/practice',
-        element: <Practice />,
-      },
-    ],
-  },
-])
+import { Toaster } from 'react-hot-toast'
+import { FirebaseAppProvider } from 'reactfire'
+import FirebaseComponents from './core/firebase/FirebaseComponents.tsx'
+import config from './config.tsx'
+import Pages from './pages/Pages.tsx'
 
 function App() {
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <FirebaseAppProvider firebaseConfig={config.firebase}>
+      <FirebaseComponents>
+        <Toaster />
+        <Pages />
+      </FirebaseComponents>
+    </FirebaseAppProvider>
   )
 }
 
