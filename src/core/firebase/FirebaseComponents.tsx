@@ -12,8 +12,8 @@ import {
   useInitPerformance,
   AnalyticsProvider,
 } from 'reactfire'
-import config from '../config'
-import { isProduction } from './isProduction'
+import config from '../../config.tsx'
+import { isProduction } from '../utils/isProduction.tsx'
 import { FirebaseApp } from '@firebase/app'
 
 const ProductionOnlyAppCheck = ({ children, app }: React.PropsWithChildren<{ app: FirebaseApp }>) =>

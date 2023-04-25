@@ -2,13 +2,13 @@
 
 import * as React from 'react'
 import { useAuth, useSigninCheck } from 'reactfire'
-import { WideButton } from './display/Button'
-import { Card, CardSection } from './display/Card'
-import { LoadingSpinner } from './display/LoadingSpinner'
+import { WideButton } from './display/Button.tsx'
+import { Card, CardSection } from './display/Card.tsx'
+import { LoadingSpinner } from './display/LoadingSpinner.tsx'
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import styles from './Authentication.module.css'
 import cx from 'classnames'
-import { useNotification } from './hooks/useNotification.tsx'
+import { useNotification } from '../hooks/useNotification.tsx'
 
 // @ts-ignore
 import firebase from 'firebase/compat'
@@ -67,7 +67,7 @@ const UserDetails = ({ user }: UserDetailsProps) => {
       <CardSection title="Auth providers">
         <ul style={{ listStyle: 'none', paddingLeft: '1rem' }}>
           {user.providerData?.map((profile: UserInfo) => (
-            <li id={profile?.providerId}>✅ {profile?.providerId}</li>
+            <li key={profile?.providerId}>✅ {profile?.providerId}</li>
           ))}
         </ul>
       </CardSection>

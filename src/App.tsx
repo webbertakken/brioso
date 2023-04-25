@@ -1,6 +1,6 @@
 import { Toaster } from 'react-hot-toast'
 import { FirebaseAppProvider } from 'reactfire'
-import FirebaseComponents from './core/FirebaseComponents.tsx'
+import FirebaseComponents from './core/firebase/FirebaseComponents.tsx'
 import config from './config.tsx'
 import Pages from './pages/Pages.tsx'
 

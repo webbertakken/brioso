@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import RootLayout from './root/RootLayout.tsx'
 import ErrorPage from './error/ErrorPage.tsx'
 import Practice from './practice/Practice.tsx'
-import { Authentication } from '../core/Authentication.tsx'
+import { Authentication } from '../core/firebase/Authentication.tsx'
 
 const router = createBrowserRouter([
   {
