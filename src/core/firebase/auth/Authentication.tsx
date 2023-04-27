@@ -8,7 +8,7 @@ import { LoadingSpinner } from './display/LoadingSpinner.tsx'
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import styles from './Authentication.module.css'
 import cx from 'classnames'
-import { useNotification } from '../hooks/useNotification.tsx'
+import { useNotification } from '../../notifications/hooks/useNotification.tsx'
 
 // @ts-ignore
 import type { User, UserInfo, auth } from 'firebase/compat'

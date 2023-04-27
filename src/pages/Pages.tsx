@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import RootLayout from './root/RootLayout.tsx'
 import ErrorPage from './error/ErrorPage.tsx'
 import Practice from './practice/Practice.tsx'
-import { Authentication } from '../core/firebase/Authentication.tsx'
+import { Authentication } from '../core/firebase/auth/Authentication.tsx'
 
 const router = createBrowserRouter([
   {
@@ -15,8 +15,18 @@ const router = createBrowserRouter([
         element: <Authentication />,
       },
       {
-        path: '/practice',
+        path: 'practice',
         element: <Practice />,
+        children: [
+          {
+            path: ':songId',
+            children: [
+              {
+                path: 'part/:partId',
+              },
+            ],
+          },
+        ],
       },
     ],
   },

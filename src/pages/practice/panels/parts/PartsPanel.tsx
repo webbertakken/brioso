@@ -3,10 +3,15 @@ import Columns from './Columns.tsx'
 import Part from './Part.tsx'
 import PartControls from './PartControls.tsx'
 import PanelHeader from '../PanelHeader.tsx'
+import Dropzone from '../../upload/Dropzone.tsx'
+import ErrorBoundary from '../../../../core/react/display/ErrorBoundary.tsx'
+import { useUser } from 'reactfire'
 
 interface Props {}
 
 const PartsPanel = ({}: Props): JSX.Element => {
+  const { data: user } = useUser()
+
   return (
     <Panel title="Controls" icon={'🔸'}>
       <PartControls />
@@ -24,6 +29,12 @@ const PartsPanel = ({}: Props): JSX.Element => {
         <Part title={'voice 3'} />
         <Part title={'piano'} />
       </div>
+
+      {user && (
+        <ErrorBoundary>
+          <Dropzone />
+        </ErrorBoundary>
+      )}
     </Panel>
   )
 }
