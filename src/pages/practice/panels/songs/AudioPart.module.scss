@@ -1,0 +1,69 @@
+$cardWidth: 200px;
+$cardHeight: 160px;
+
+.proto1 {
+  position: relative;
+  min-width: $cardWidth;
+  min-height: $cardHeight;
+  background: #537ea1;
+  border: 1px solid #fffbc5;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 0.75em;
+
+  input {
+    font-size: 0.75em;
+  }
+
+  .bar {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    width: 83.32%;
+    margin-left: -41.57%;
+    height: 8px;
+    margin-bottom: -4px;
+    border-radius: 50px;
+    background: #fffbc5;
+  }
+
+  .inputs {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    width: 83.32%;
+    margin-left: -41.57%;
+    height: 2em;
+    margin-bottom: -1em;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    input {
+      display: inline-block;
+      width: 40%;
+      height: 80%;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    bottom: 55%;
+    left: 50%;
+    width: #{$cardWidth / 3};
+    height: #{$cardWidth / 3};
+    margin: #{-$cardWidth / 6};
+    border-radius: 50px;
+    background: #fffbc5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3f5f7a;
+
+    .symbol {
+      font-size: 1.33em;
+    }
+  }
+}

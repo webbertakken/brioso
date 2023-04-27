@@ -2,6 +2,7 @@ import styles from './RootLayout.module.css'
 import { Outlet } from 'react-router-dom'
 import Logo from './logo/Logo.tsx'
 import Menu from './Menu.tsx'
+import ErrorBoundary from '../../core/react/display/ErrorBoundary.tsx'
 
 interface Props {
   children?: React.ReactNode
@@ -10,9 +11,11 @@ interface Props {
 const RootLayout = ({ children }: Props): JSX.Element => {
   return (
     <div className={styles.rootLayout}>
-      <Logo />
-      <Menu />
-      {children || <Outlet />}
+      <ErrorBoundary>
+        <Logo />
+        <Menu />
+        {children || <Outlet />}
+      </ErrorBoundary>
     </div>
   )
 }
