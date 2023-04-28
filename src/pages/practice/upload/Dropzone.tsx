@@ -31,8 +31,7 @@ const fileUploadSlice = createSlice({
     //     return member;
     //   });
     // },
-    questionRegistered: (state, action: PayloadAction<File>) => {
-      // console.log(action);
+    uploadRegistered: (state, action: PayloadAction<File>) => {
       return state.filter((member) => member.name !== action.payload.name)
     },
     uploadFailed: (state, action: PayloadAction<File>) => {
@@ -42,7 +41,7 @@ const fileUploadSlice = createSlice({
   },
 })
 
-const { acceptFiles, questionRegistered, uploadFailed } = fileUploadSlice.actions
+const { acceptFiles, uploadRegistered, uploadFailed } = fileUploadSlice.actions
 
 interface Props {
   className?: string
@@ -57,9 +56,9 @@ const Dropzone = ({ className, dropAreaClassName, previewsClassName }: Props) =>
 
   const onDrop = useFirebaseDrop(
     Inventory.getPartsFilesPath(user!.uid, songId!),
-    Inventory.getPartsPath(user!.uid, songId!),
+    Inventory.getPartsDatabasePath(user!.uid, songId!),
     (x) => dispatch(acceptFiles(x)),
-    (x) => dispatch(questionRegistered(x)),
+    (x) => dispatch(uploadRegistered(x)),
     (x) => dispatch(uploadFailed(x)),
   )
 
