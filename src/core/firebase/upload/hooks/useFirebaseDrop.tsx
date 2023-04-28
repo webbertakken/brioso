@@ -2,7 +2,7 @@ import { DropEvent, FileRejection } from 'react-dropzone'
 import { useFirestore, useStorage, useUser } from 'reactfire'
 import { useCallback } from 'react'
 import { ref, uploadBytesResumable } from 'firebase/storage'
-import { useNotification } from '../../../notifications/hooks/useNotification.tsx'
+import { useNotify } from '../../../notifications/hooks/useNotify.tsx'
 import { slugify } from '../../../utils/slugify'
 import { doc, DocumentReference, getDoc, setDoc } from 'firebase/firestore'
 import { UploadTaskSnapshot, UploadTask, StorageReference } from '@firebase/storage'
@@ -75,7 +75,7 @@ export function useFirebaseDrop(
   const storage = useStorage()
   const { data: user } = useUser()
   const firestore = useFirestore()
-  const notify = useNotification()
+  const notify = useNotify()
 
   const saveFileMeta = useCallback(
     async (file: File, uploadResult: UploadTaskSnapshot) => {

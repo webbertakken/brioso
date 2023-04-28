@@ -8,7 +8,7 @@ import { LoadingSpinner } from './display/LoadingSpinner.tsx'
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import styles from './Authentication.module.css'
 import cx from 'classnames'
-import { useNotification } from '../../notifications/hooks/useNotification.tsx'
+import { useNotify } from '../../notifications/hooks/useNotify.tsx'
 
 // @ts-ignore
 import type { User, UserInfo, auth } from 'firebase/compat'
@@ -38,7 +38,7 @@ interface UserDetailsProps {
 
 const UserDetails = ({ user }: UserDetailsProps) => {
   const auth = useAuth()
-  const notify = useNotification()
+  const notify = useNotify()
 
   const signOut = async () => {
     await notify.promise(auth.signOut(), {
@@ -81,7 +81,7 @@ const UserDetails = ({ user }: UserDetailsProps) => {
 
 const SignInForm = () => {
   const auth = useAuth()
-  const notify = useNotification()
+  const notify = useNotify()
 
   const signIn = async (auth: Auth) => {
     const provider = new GoogleAuthProvider()
