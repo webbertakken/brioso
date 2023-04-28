@@ -3,19 +3,24 @@
   flex-direction: row;
   align-items: center;
   justify-content: stretch;
-  padding: 0 0.25rem;
-  border-bottom: 1px solid rgba(204, 204, 204, .25);
-}
-
-.song > div {
-  flex-grow: 2;
   padding: 0.25rem;
+  border-bottom: 1px solid rgba(204, 204, 204, .15);
+  text-decoration: none;
+  color: inherit;
 }
 
-.song .icon {
-  flex-grow: 0
+.song > * {
+  padding: 0.25rem;
+  flex-grow: 1;
+}
+
+.song > *:first-child {
+  flex-grow: 0;
+  width: 32px;
+  padding: 0;
+  text-align: center;
 }
 
 .song .title {
-
+  padding: 0.25rem 0.5rem;
 }

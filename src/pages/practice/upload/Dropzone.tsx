@@ -56,7 +56,7 @@ const Dropzone = ({ className, dropAreaClassName, previewsClassName }: Props) =>
 
   const onDrop = useFirebaseDrop(
     Inventory.getPartsFilesPath(user!.uid, songId!),
-    Inventory.getPartsDatabasePath(user!.uid, songId!),
+    Inventory.getPartsPath(user!.uid, songId!),
     (x) => dispatch(acceptFiles(x)),
     (x) => dispatch(uploadRegistered(x)),
     (x) => dispatch(uploadFailed(x)),

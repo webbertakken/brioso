@@ -28,6 +28,12 @@ body {
   margin: 0;
 }
 
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
