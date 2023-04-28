@@ -4,8 +4,6 @@ import FirebaseComponents from './core/firebase/FirebaseComponents.tsx'
 import config from './config.tsx'
 import Pages from './pages/Pages.tsx'
 import ErrorBoundary from './core/react/display/ErrorBoundary.tsx'
-import PageViewLogger from './core/firebase/tracking/PageViewLogger.tsx'
-// import PageViewLogger from './core/firebase/tracking/PageViewLogger.tsx'
 
 function App() {
   return (
@@ -17,10 +15,6 @@ function App() {
 
         <ErrorBoundary>
           <Pages />
-        </ErrorBoundary>
-
-        <ErrorBoundary>
-          <PageViewLogger />
         </ErrorBoundary>
       </FirebaseComponents>
     </FirebaseAppProvider>

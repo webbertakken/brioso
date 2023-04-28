@@ -67,7 +67,7 @@ export type FileUpload = File & {
  */
 export function useFirebaseDrop(
   fileUploadPath: string,
-  metaCollectionPath: string,
+  databaseCollectionPath: string,
   acceptFilesCallback: (files: FileUpload[]) => void,
   uploadCompleteCallback: (file: File) => void,
   uploadFailedCallback: (file: File) => void,
@@ -84,7 +84,7 @@ export function useFirebaseDrop(
       const createIfNotExists = async () => {
         const documentReference = doc(
           firestore,
-          metaCollectionPath,
+          databaseCollectionPath,
           slug,
         ) as DocumentReference<Upload>
         const document = await getDoc(documentReference)
@@ -146,11 +146,14 @@ export function useFirebaseDrop(
 
       await notify.promise(createIfNotExists(), {
         loading: 'Uploading...',
-        error: (error) => `An error occurred. ${error.message}`,
+        error: (error) => {
+          console.error(error, error.stack)
+          return `An error occurred. ${error.message}`
+        },
         success: `Upload complete.`,
       })
     },
-    [metaCollectionPath, firestore, notify],
+    [databaseCollectionPath, firestore, notify],
   )
 
   const onDrop = useCallback(

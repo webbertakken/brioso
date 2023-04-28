@@ -3,18 +3,20 @@ import { Outlet } from 'react-router-dom'
 import Logo from './logo/Logo.tsx'
 import Menu from './Menu.tsx'
 import ErrorBoundary from '../../core/react/display/ErrorBoundary.tsx'
+import PageViewLogger from '../../core/firebase/tracking/PageViewLogger.tsx'
+import { PropsWithChildren } from 'react'
 
-interface Props {
-  children?: React.ReactNode
-}
-
-const RootLayout = ({ children }: Props): JSX.Element => {
+const RootLayout = ({ children }: PropsWithChildren): JSX.Element => {
   return (
     <div className={styles.rootLayout}>
       <ErrorBoundary>
         <Logo />
         <Menu />
         {children || <Outlet />}
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <PageViewLogger />
       </ErrorBoundary>
     </div>
   )
