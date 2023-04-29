@@ -22,15 +22,6 @@ const fileUploadSlice = createSlice({
     acceptFiles: (state, action: PayloadAction<Array<FileUpload>>) => {
       state.push(...action.payload.map((member) => Object.assign(member, { uploaded: false })))
     },
-    // uploadComplete: (state, action: PayloadAction<FileUpload>) => {
-    //   return state.map((member) => {
-    //     if (member.name === action.payload) {
-    //       delete member.uploadTask;
-    //       member.uploaded = true;
-    //     }
-    //     return member;
-    //   });
-    // },
     uploadRegistered: (state, action: PayloadAction<File>) => {
       return state.filter((member) => member.name !== action.payload.name)
     },

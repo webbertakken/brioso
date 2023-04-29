@@ -28,7 +28,7 @@ const AddSong = ({}: Props): JSX.Element => {
 
         if (document.exists()) throw new Error('Song already exists.')
 
-        await setDoc(documentReference, { id, name })
+        await setDoc(documentReference, { id, name, userId: user!.uid })
       }
 
       await notify.promise(createIfNotExists(), {
@@ -51,7 +51,7 @@ const AddSong = ({}: Props): JSX.Element => {
 
   return (
     <form className={cx(songStyles.song, styles.addSong)} target="" onSubmit={onSubmit}>
-      <label htmlFor="songName" className={styles.icon}>
+      <label htmlFor="songName" className={songStyles.icon}>
         ➕
       </label>
       <div className={styles.title}>

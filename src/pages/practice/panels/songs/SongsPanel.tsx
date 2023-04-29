@@ -18,7 +18,6 @@ const SongsPanel = ({}: Props): JSX.Element => {
   const songsRef = collection(firestore, path) as CollectionReference<SongData>
   const { data: songs } = useFirestoreCollectionData(songsRef)
 
-  console.log(songs)
   return (
     <Panel title="Songs" icon={'🎵'}>
       {songs?.map(({ id, name }) => (

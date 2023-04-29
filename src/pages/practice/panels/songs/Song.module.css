@@ -22,11 +22,21 @@
   flex-grow: 1;
 }
 
-.song > *:first-child {
+
+.song > .icon {
   flex-grow: 0;
   width: 32px;
   padding: 0;
   text-align: center;
+  transition: opacity 0.15s ease-in-out, filter 0.15s ease-in-out;
+}
+
+.song:not(:hover):not(.selected) > .icon {
+  filter: grayscale(100%);
+}
+
+.song:not(:hover) > .icon.delete {
+  opacity: 0;
 }
 
 .song .title {
