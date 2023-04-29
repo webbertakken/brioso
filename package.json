@@ -15,7 +15,7 @@
   },
   "lint-staged": {
     "*.@(ts|tsx)": "bash -c tsc --skipLibCheck --noEmit",
-    "*.@(ts|tsx|js|jsx)": "eslint --max-warnings 0",
+    "!(functions/**/*)*.@(ts|tsx|js|jsx)": "eslint --max-warnings 0",
     "*.@(ts|tsx|js|jsx|json|jsonc|json5|md|mdx|yaml|yml)": "prettier --write"
   },
   "dependencies": {
@@ -57,7 +57,7 @@
     "vitest": "^0.30.1"
   },
   "volta": {
-    "node": "20.0.0",
+    "node": "18.16.0",
     "yarn": "3.5.0"
   }
 }
