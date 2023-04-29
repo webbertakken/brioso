@@ -20,7 +20,7 @@ const SongsPanel = ({}: Props): JSX.Element => {
   return (
     <Panel title="Songs" icon={'🎵'}>
       {songs?.map(({ id, name }) => (
-        <Song key={id} id={id} title={name} />
+        <Song key={id} id={id} selected={id === songId} title={name} />
       ))}
       <AddSong />
     </Panel>
