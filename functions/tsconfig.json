@@ -9,5 +9,5 @@
   },
 
   "compileOnSave": true,
-  "include": ["src", "../src/**/*.d.ts"]
+  "include": ["../domain", "src"]
 }

@@ -11,6 +11,8 @@ service cloud.firestore {
 
     match /users/{userId} {
       match /songs/{songId} {
+        allow write: if userId == request.auth.uid;
+
         match /parts/{partId} {
           allow write: if userId == request.auth.uid;
         }
