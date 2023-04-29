@@ -1,5 +1,8 @@
 .part {
   display: table-row;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: inherit;
 }
 
 .part > div {
@@ -8,6 +11,11 @@
   border-bottom: 1px solid rgba(204, 204, 204, .25);
   border-right: 1px solid rgba(204, 204, 204, .25);
   text-align: center;
+}
+
+.part.selected > div {
+  color: #ff9640;
+  border-color: rgba(255, 150, 64, 0.29);
 }
 
 .part .title {

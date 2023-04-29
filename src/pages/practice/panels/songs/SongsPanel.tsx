@@ -5,6 +5,7 @@ import { collection } from 'firebase/firestore'
 import { useFirestore, useFirestoreCollectionData, useUser } from 'reactfire'
 import { Inventory } from '../../../../model/inventory.ts'
 import AddSong from './AddSong.tsx'
+import { CollectionReference } from 'firebase/firestore'
 
 interface Props {}
 
@@ -13,7 +14,8 @@ const SongsPanel = ({}: Props): JSX.Element => {
   const { songId = 'No song selected' } = useParams()
 
   const firestore = useFirestore()
-  const songsRef = collection(firestore, Inventory.getSongsPath(user!.uid))
+  const path = Inventory.getSongsPath(user!.uid)
+  const songsRef = collection(firestore, path) as CollectionReference<SongData>
   const { data: songs } = useFirestoreCollectionData(songsRef)
 
   console.log(songs)
