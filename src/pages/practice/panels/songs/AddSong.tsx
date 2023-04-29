@@ -59,6 +59,7 @@ const AddSong = ({}: Props): JSX.Element => {
           className={styles.input}
           id="songName"
           placeholder="Add Song"
+          value={songName}
           onChange={(e) => setSongName(e.target.value)}
         />
       </div>
