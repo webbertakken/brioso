@@ -6,10 +6,10 @@ import cx from 'classnames'
 import {
   FileUpload,
   useFirebaseDrop,
-} from '../../../core/firebase/upload/hooks/useFirebaseDrop.tsx'
-import AudioPart from '../panels/songs/AudioPart.tsx'
+} from '../../../../../core/firebase/upload/hooks/useFirebaseDrop.tsx'
+import AudioPart from '../../songs/AudioPart.tsx'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Inventory } from '../../../model/inventory.ts'
+import { Inventory } from '../../../../../model/inventory.ts'
 import { useParams } from 'react-router-dom'
 import { useUser } from 'reactfire'
 

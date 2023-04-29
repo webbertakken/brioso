@@ -22,7 +22,7 @@ const router = createBrowserRouter([
             path: ':songId',
             children: [
               {
-                path: 'part/:partId',
+                path: ':partId',
               },
             ],
           },
