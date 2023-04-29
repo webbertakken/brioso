@@ -3,7 +3,7 @@ export class Inventory {
     return `users/${userUid}/songs`
   }
 
-  public static getPartsDatabasePath(userUid: string, songSlug: string) {
+  public static getPartsPath(userUid: string, songSlug: string) {
     return `users/${userUid}/songs/${songSlug}/parts`
   }
 

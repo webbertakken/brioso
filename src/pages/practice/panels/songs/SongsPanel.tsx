@@ -1,24 +1,28 @@
 import Panel from '../Panel.tsx'
 import Song from './Song.tsx'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { collection } from 'firebase/firestore'
+import { useFirestore, useFirestoreCollectionData, useUser } from 'reactfire'
+import { Inventory } from '../../../../model/inventory.ts'
+import AddSong from './AddSong.tsx'
 
 interface Props {}
 
 const SongsPanel = ({}: Props): JSX.Element => {
+  const { data: user } = useUser()
   const { songId = 'No song selected' } = useParams()
 
+  const firestore = useFirestore()
+  const songsRef = collection(firestore, Inventory.getSongsPath(user!.uid))
+  const { data: songs } = useFirestoreCollectionData(songsRef)
+
+  console.log(songs)
   return (
     <Panel title="Songs" icon={'🎵'}>
-      <p>{songId}</p>
-      <Link to={'/practice/every-time'}>
-        <Song title="Every Time I look at You - C Maj" />
-      </Link>
-      <Link to={'/practice/au-fond'}>
-        <Song title="Au Fond Du Temple Saint" />
-      </Link>
-      <Link to={'/practice/magic-dragon'}>
-        <Song title="Puff The Magic Dragon" />
-      </Link>
+      {songs?.map(({ id, name }) => (
+        <Song key={id} id={id} title={name} />
+      ))}
+      <AddSong />
     </Panel>
   )
 }
