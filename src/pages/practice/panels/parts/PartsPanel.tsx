@@ -30,9 +30,17 @@ const PartsPanel = ({}: Props): JSX.Element => {
 
       <PanelHeader title="Parts" icon={'🔸'} />
       <Parts>
-        {parts?.map(({ id, name }) => (
-          <Part key={id} id={id} songId={songId} selected={id === partId} title={name} />
-        ))}
+        {parts
+          // Sort by name
+          ?.sort(({ name: a }, { name: b }) => a.localeCompare(b))
+          // Vocals before instruments
+          .sort(({ isInstrument: a }, { isInstrument: b }) => (a === b ? 0 : a ? 1 : -1))
+          // Known parts after unidentified parts
+          .sort(({ isKnownPart: a }, { isKnownPart: b }) => (a === b ? 0 : a ? 1 : -1))
+          // Render
+          .map(({ id, name }) => (
+            <Part key={id} id={id} songId={songId} selected={id === partId} title={name} />
+          ))}
       </Parts>
 
       {user && (

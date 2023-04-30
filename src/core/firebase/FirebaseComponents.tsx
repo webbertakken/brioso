@@ -1,7 +1,7 @@
 import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check'
-import { getAuth } from 'firebase/auth'
-import { getFirestore } from 'firebase/firestore'
-import { getStorage } from 'firebase/storage'
+import { getAuth, connectAuthEmulator } from 'firebase/auth'
+import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
+import { getStorage, connectStorageEmulator } from 'firebase/storage'
 import { getAnalytics } from 'firebase/analytics'
 import {
   AppCheckProvider,
@@ -15,8 +15,9 @@ import {
 import config from '../../config.tsx'
 import { isProduction } from '../utils/isProduction.tsx'
 import { FirebaseApp } from '@firebase/app'
+import { PropsWithChildren } from 'react'
 
-const ProductionOnlyAppCheck = ({ children, app }: React.PropsWithChildren<{ app: FirebaseApp }>) =>
+const ProductionOnlyAppCheck = ({ children, app }: PropsWithChildren<{ app: FirebaseApp }>) =>
   isProduction() ? (
     <AppCheckProvider
       sdk={initializeAppCheck(app, {
@@ -30,11 +31,7 @@ const ProductionOnlyAppCheck = ({ children, app }: React.PropsWithChildren<{ app
     <>{children}</>
   )
 
-interface FirebaseComponentsProps {
-  children?: React.ReactNode
-}
-
-function FirebaseComponents({ children }: FirebaseComponentsProps) {
+function FirebaseComponents({ children }: PropsWithChildren) {
   // a parent component contains a `FirebaseAppProvider`
   const app = useFirebaseApp()
 
@@ -43,6 +40,13 @@ function FirebaseComponents({ children }: FirebaseComponentsProps) {
   const auth = getAuth(app)
   const storage = getStorage(app)
   const analytics = getAnalytics(app)
+
+  // use emulator in development
+  if (process.env.NODE_ENV !== 'production') {
+    connectFirestoreEmulator(firestore, 'localhost', 8080)
+    connectAuthEmulator(auth, 'http://localhost:9099')
+    connectStorageEmulator(storage, 'localhost', 9199)
+  }
 
   useInitPerformance(
     async (app) => {
