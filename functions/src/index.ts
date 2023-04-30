@@ -1,16 +1,17 @@
-import * as functions from 'firebase-functions'
+import * as functionsBase from 'firebase-functions'
 import * as admin from 'firebase-admin'
 import { QuerySnapshot } from 'firebase-admin/firestore'
 import { wellKnownInstruments, wellKnownVocalParts } from './wellKnownParts'
 
 admin.initializeApp()
 
+const functions = functionsBase.region('europe-west3')
 const db = admin.firestore()
 
 exports.onSongDeleted = functions.firestore
-  .document('/users/{userID}/songs/{songId}')
+  .document('/users/{userId}/songs/{songId}')
   .onDelete(async (snap, context) => {
-    console.log('Deleting song: ', context.params.songId)
+    console.log('Deleting song ', context.params.songId)
 
     // Get an object representing the document prior to deletion
     const deletedSong = snap.data() as SongData
@@ -37,7 +38,7 @@ exports.onSongDeleted = functions.firestore
 exports.onPartCreated = functions.firestore
   .document('/users/{userId}/songs/{songId}/parts/{partId}')
   .onCreate(async (snap, context) => {
-    console.log('Classifying part: ', context.params.partId)
+    console.log('Classifying part ', context.params.partId)
 
     const { name: originalName } = snap.data() as PartData
 
