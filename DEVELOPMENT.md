@@ -13,6 +13,12 @@ to work.
 volta install node@16
 ```
 
+You must also have the latest `yarn` globally installed (4-beta is fine)
+
+```bash
+volta install yarn
+```
+
 Install `firebase-tools` globally.
 
 ```bash
@@ -21,9 +27,14 @@ npm install -g firebase-tools
 
 **Troubleshooting**: remove `~/.cache` before reinstalling `firebase-tools`.
 
-## Development
+## Develop
 
-Run both:
+```bash
+yarn dev
+```
 
-- yarn dev
-- firebase emulators:start
+## Deploy
+
+```bash
+firebase deploy
+```

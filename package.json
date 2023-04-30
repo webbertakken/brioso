@@ -14,6 +14,7 @@
     "type-check": "tsc --pretty --noEmit",
     "preview": "vite preview",
     "test": "vitest",
+    "plugin": "echo \"plugin dummy\"",
     "prepare": "husky install"
   },
   "lint-staged": {

@@ -7,10 +7,11 @@ admin.initializeApp()
 
 const db = admin.firestore()
 
-exports.deleteUser = functions.firestore
+exports.onSongDeleted = functions.firestore
   .document('/users/{userID}/songs/{songId}')
   .onDelete(async (snap, context) => {
-    console.log('Deleting song', context.params.songId)
+    console.log('Deleting song: ', context.params.songId)
+
     // Get an object representing the document prior to deletion
     const deletedSong = snap.data() as SongData
 
@@ -33,10 +34,10 @@ exports.deleteUser = functions.firestore
     })
   })
 
-exports.makeUppercase = functions.firestore
+exports.onPartCreated = functions.firestore
   .document('/users/{userId}/songs/{songId}/parts/{partId}')
   .onCreate(async (snap, context) => {
-    console.log('Updating name of ', context.params.partId)
+    console.log('Classifying part: ', context.params.partId)
 
     const { name: originalName } = snap.data() as PartData
 
