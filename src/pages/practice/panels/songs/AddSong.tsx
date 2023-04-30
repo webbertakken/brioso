@@ -7,10 +7,12 @@ import { Inventory } from '../../../../model/inventory.ts'
 import { SyntheticEvent, useCallback, useState } from 'react'
 import { slugify } from '../../../../core/utils/slugify.ts'
 import { useNotify } from '../../../../core/notifications/hooks/useNotify.tsx'
+import { useNavigate } from 'react-router-dom'
 
 interface Props {}
 
 const AddSong = ({}: Props): JSX.Element => {
+  const navigate = useNavigate()
   const notify = useNotify()
   const firestore = useFirestore()
   const { data: user } = useUser()
@@ -39,8 +41,11 @@ const AddSong = ({}: Props): JSX.Element => {
         },
         success: `New song added.`,
       })
+
+      // Select song after creating it for uploading multiple songs more easily.
+      navigate(`/practice/${id}`)
     },
-    [firestore, notify, user],
+    [firestore, navigate, notify, user],
   )
 
   const onSubmit = async (event: SyntheticEvent) => {

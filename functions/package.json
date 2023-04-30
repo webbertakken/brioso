@@ -3,11 +3,12 @@
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
-    "build:watch": "tsc --watch",
+    "watch": "tsc --watch",
     "serve": "yarn build && firebase emulators:start --only functions",
     "shell": "yarn build && firebase functions:shell",
     "start": "yarn shell",
     "deploy": "firebase deploy --only functions",
+    "plugin": "echo \"plugin dummy\"",
     "logs": "firebase functions:log"
   },
   "engines": {
@@ -32,7 +33,7 @@
   },
   "private": true,
   "volta": {
-    "node": "18.16.0",
-    "yarn": "3.5.0"
+    "node": "16.20.0",
+    "yarn": "4.0.0-rc.42"
   }
 }

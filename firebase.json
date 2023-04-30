@@ -4,10 +4,7 @@
       "source": "functions",
       "codebase": "default",
       "ignore": ["node_modules", ".git", "firebase-debug.log", "firebase-debug.*.log"],
-      "predeploy": [
-        "yarn --cwd \"$RESOURCE_DIR\" run lint",
-        "yarn --cwd \"$RESOURCE_DIR\" run build"
-      ]
+      "predeploy": ["yarn workspace functions run lint", "yarn workspace functions run build"]
     }
   ],
   "firestore": {
@@ -17,6 +14,7 @@
   "hosting": {
     "public": "dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "predeploy": ["yarn build"],
     "rewrites": [
       {
         "source": "**",
@@ -29,5 +27,26 @@
   },
   "remoteconfig": {
     "template": ".firebase/remoteconfig.template.json"
+  },
+  "emulators": {
+    "singleProjectMode": true,
+    "ui": {
+      "enabled": true
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "storage": {
+      "port": 9199
+    },
+    "auth": {
+      "port": 9099
+    },
+    "pubsub": {
+      "port": 8085
+    }
   }
 }
