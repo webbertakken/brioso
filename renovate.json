@@ -1,6 +1,19 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
+  "extends": ["schedule:weekly", ":rebaseStalePrs", ":disableMajorUpdates", ":dependencyDashboard"],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "groupName": "devDependencies",
+      "description": "Update dev dependencies in a grouped PR",
+      "matchDepTypes": ["devDependencies", "optionalDependencies", "peerDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "commitMessagePrefix": "chore: ",
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["lint-staged", "husky"],
+      "enabled": false
+    }
   ]
 }
