@@ -38,8 +38,15 @@ const PartsPanel = ({}: Props): JSX.Element => {
           // Known parts after unidentified parts
           .sort(({ isKnownPart: a }, { isKnownPart: b }) => (a === b ? 0 : a ? 1 : -1))
           // Render
-          .map(({ id, name }) => (
-            <Part key={id} id={id} songId={songId} selected={id === partId} title={name} />
+          .map(({ id, name, metadata }) => (
+            <Part
+              key={id}
+              id={id}
+              songId={songId}
+              selected={id === partId}
+              title={name}
+              metadata={metadata}
+            />
           ))}
       </Parts>
 

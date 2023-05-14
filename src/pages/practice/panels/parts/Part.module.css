@@ -5,7 +5,7 @@
   color: inherit;
 }
 
-.part > div {
+.part > span {
   display: table-cell;
   padding: 0.5rem;
   border-bottom: 1px solid rgba(204, 204, 204, .25);
@@ -13,7 +13,7 @@
   text-align: center;
 }
 
-.part.selected > div {
+.part.selected > span {
   color: #ff9640;
   border-color: rgba(255, 150, 64, 0.29);
 }
