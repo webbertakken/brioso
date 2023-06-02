@@ -12,13 +12,24 @@ interface Props {
   muted?: boolean
   metadata: UploadMeta
   selected?: boolean
+  getRefMap: () => Map<string, HTMLAudioElement>
 }
 
-const Part = ({ id, songId, title, metadata, selected = false }: Props): JSX.Element => {
-  const [mutedState, setMutedState] = useState(false)
-
+const Part = ({
+  id,
+  songId,
+  title,
+  metadata,
+  selected = false,
+  getRefMap,
+  muted,
+}: Props): JSX.Element => {
+  const [mutedState, setMutedState] = useState(muted)
   const { loading, file } = useFile(metadata.fullPath)
-  // console.log(downloadUrl, meta)
+
+  const parentRefIndex = (node: HTMLAudioElement | null) => {
+    node ? getRefMap().set(id, node) : getRefMap().delete(id)
+  }
 
   const toggleMuted = (e: SyntheticEvent) => {
     e.preventDefault()
@@ -33,17 +44,24 @@ const Part = ({ id, songId, title, metadata, selected = false }: Props): JSX.Ele
       >
         <span onClick={toggleMuted}>{mutedState ? '🔇' : '🔊'}</span>
         <span className={styles.title}>{title}</span>
-        <span>💬</span>
-        <span>
-          {loading ? (
-            <LoadingSpinner />
-          ) : (
-            <div style={{ display: 'table-cell', columnSpan: 'all', width: '100%' }}>
-              <audio src={file.downloadUrl} muted={mutedState} controls />
-            </div>
-          )}
-        </span>
-        <span>🎛️</span>
+        {loading ? (
+          <LoadingSpinner />
+        ) : (
+          <>
+            <span>💬</span>
+            <span>
+              ⚖️
+              <div style={{ display: 'table-cell', columnSpan: 'all', width: '100%' }}>
+                <audio
+                  ref={parentRefIndex}
+                  src={file.downloadUrl}
+                  muted={mutedState} /*controls*/
+                />
+              </div>
+            </span>
+            <span>🎛️</span>
+          </>
+        )}
       </Link>
     </>
   )
