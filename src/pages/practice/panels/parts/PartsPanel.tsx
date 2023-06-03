@@ -38,10 +38,16 @@ const PartsPanel = ({}: Props): JSX.Element => {
 
   return (
     <Panel title="Controls" icon={'🔸'}>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <PartControls getRefMap={getRefMap} songId={songId} partId={partId} parts={parts} />
-        <SharedControls getRefMap={getRefMap} songId={songId} partId={partId} parts={parts} />
-      </div>
+      {partId ? (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <PartControls getRefMap={getRefMap} songId={songId} partId={partId} parts={parts} />
+          <SharedControls getRefMap={getRefMap} songId={songId} partId={partId} parts={parts} />
+        </div>
+      ) : (
+        <div style={{ padding: '1rem 1rem 1.5rem' }}>
+          To begin, <strong>select the part</strong> you'd like to practice from the list below.
+        </div>
+      )}
 
       <PanelHeader title="Parts" icon={'🔸'} />
       <Parts>
