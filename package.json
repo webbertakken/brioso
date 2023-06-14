@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "engines": {
-    "node": "18",
-    "yarn": "4"
+    "node": "18.16.0",
+    "yarn": "3.6.0"
   },
   "workspaces": [
     "functions"
@@ -67,6 +67,6 @@
   },
   "volta": {
     "node": "18.16.0",
-    "yarn": "4.0.0-rc.42"
+    "yarn": "3.6.0"
   }
 }
