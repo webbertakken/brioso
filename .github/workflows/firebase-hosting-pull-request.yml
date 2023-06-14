@@ -11,10 +11,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: volta-cli/action@v4
+      - uses: actions/setup-node@v3
         with:
           node-version: 18.16.0
-          yarn-version: 3.6.0
+          cache: 'yarn'
+      # Temp yarn install, since setup-node doesn't respect volta yet.
+      - run: npm i -g yarn@3
+
+      #      - uses: volta-cli/action@v4
+      #        with:
+      #          node-version: 18.16.0
+      #          yarn-version: 3.6.0
+      #      # Temp manual caching, since volta-cli/action@v4 doesn't support caching yet
+      #      - name: Get yarn cache directory path
+      #        id: yarn-cache-dir-path
+      #        run: echo "::set-output name=dir::$(yarn cache dir)"
+      #      - uses: actions/cache@v3
+      #        with:
+      #          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+      #          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+      #          restore-keys: |
+      #            ${{ runner.os }}-yarn-
+
       - run: yarn install --immutable
       - run: yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
