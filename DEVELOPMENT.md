@@ -38,3 +38,18 @@ yarn dev
 ```bash
 firebase deploy
 ```
+
+## Upgrading tools
+
+Upgrade Node
+
+```bash
+volta pin node@lts
+```
+
+Upgrade Yarn
+
+```bash
+yarn set version stable
+volta pin yarn
+```

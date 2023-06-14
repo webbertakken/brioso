@@ -11,9 +11,6 @@
     "plugin": "echo \"plugin dummy\"",
     "logs": "firebase functions:log"
   },
-  "engines": {
-    "node": "16"
-  },
   "main": "lib/index.js",
   "dependencies": {
     "firebase-admin": "^11.8.0",
@@ -33,7 +30,8 @@
   },
   "private": true,
   "volta": {
-    "node": "16.20.0",
-    "yarn": "4.0.0-rc.42"
-  }
+    "node": "18.16.0",
+    "yarn": "3.6.0-git.20230603.hash-3c8237cb"
+  },
+  "packageManager": "yarn@3.6.0"
 }
