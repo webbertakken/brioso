@@ -41,13 +41,13 @@ firebase deploy
 
 ## Upgrading tools
 
-Upgrade node
+Upgrade Node
 
 ```bash
-volta pin node
+volta pin node@lts
 ```
 
-Upgrade yarn
+Upgrade Yarn
 
 ```bash
 yarn set version stable
