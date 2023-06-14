@@ -13,9 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: volta-cli/action@v4
         with:
-          cache: 'yarn'
+          node-version: 18
+          yarn-version: 4
       - run: yarn install --immutable
       - run: yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
