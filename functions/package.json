@@ -1,5 +1,9 @@
 {
   "name": "functions",
+  "engines": {
+    "node": "16",
+    "yarn": "4"
+  },
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
@@ -10,9 +14,6 @@
     "deploy": "firebase deploy --only functions",
     "plugin": "echo \"plugin dummy\"",
     "logs": "firebase functions:log"
-  },
-  "engines": {
-    "node": "16"
   },
   "main": "lib/index.js",
   "dependencies": {
