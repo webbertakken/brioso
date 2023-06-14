@@ -18,7 +18,7 @@ jobs:
           node-version: 18.16.0
           cache: 'yarn'
       # Temp yarn install, since setup-node doesn't respect volta yet.
-      - run: npm i -g yarn@3
+      - run: npm i -g yarn@3.6.0
 
       #      - uses: volta-cli/action@v4
       #        with:
