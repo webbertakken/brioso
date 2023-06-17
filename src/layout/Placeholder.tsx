@@ -2,7 +2,7 @@ interface Props {}
 
 const Placeholder = ({}: Props): JSX.Element => {
   return (
-    <div className="relative h-96 overflow-hidden rounded border border-dashed border-gray-400 opacity-75">
+    <div className="relative h-full min-h-[18rem] overflow-hidden rounded border border-dashed border-gray-400 opacity-75">
       <svg className="absolute inset-0 h-full w-full stroke-gray-900/10" fill="none">
         <defs>
           <pattern
