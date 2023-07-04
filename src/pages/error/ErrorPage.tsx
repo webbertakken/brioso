@@ -1,5 +1,5 @@
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom'
-import RootLayout from '../root/RootLayout.tsx'
+import RootLayout from '../../layout/RootLayout.tsx'
 
 export default function ErrorPage() {
   const error = useRouteError()
