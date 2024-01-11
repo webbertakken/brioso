@@ -12,9 +12,6 @@
     "logs": "firebase functions:log"
   },
   "version": "0.1.0",
-  "engines": {
-    "node": "16"
-  },
   "main": "lib/index.js",
   "dependencies": {
     "firebase-admin": "^11.8.0",
