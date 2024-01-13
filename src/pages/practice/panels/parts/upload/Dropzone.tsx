@@ -63,7 +63,7 @@ const Dropzone = ({ className, dropAreaClassName, previewsClassName }: Props) =>
       files.length > 0 ? (
         <aside
           className={cx(
-            'p-1 grid grid-cols-1 gap-1 justify-items-stretch transition-all',
+            'grid grid-cols-1 justify-items-stretch gap-1 p-1 transition-all',
             previewsClassName,
           )}
         >
@@ -99,7 +99,7 @@ const Dropzone = ({ className, dropAreaClassName, previewsClassName }: Props) =>
         {...getRootProps()}
         className={cx(dropAreaClassName, 'flex flex-grow flex-col text-center transition-all', {
           'border-[#2196f3] border-opacity-100 bg-white bg-opacity-5': isDragActive,
-          'border-[#00e676] border-opacity-100 bg-green bg-opacity-5': isDragAccept,
+          'bg-green border-[#00e676] border-opacity-100 bg-opacity-5': isDragAccept,
           // Todo - update so it's not always set to true
           // 'border-[#ff1744] border-opacity-100 bg-red bg-opacity-5': isDragReject,
         })}

@@ -1,44 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poltawski+Nowy:ital,wght@1,700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/**
- * Resets
- */
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #222222;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-input {
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Apply this to top level containers to fix their layout shift when scrollbar appears */
+@media (min-width: 1024px /* breakpoint for desktop layout */) {
+  .top-level-container {
+    padding-left: calc(100vw - 100%);
   }
 }
 
-
+/* The warning is a bit distracting over time */
+.firebase-emulator-warning {
+  opacity: 0.25;
+}
