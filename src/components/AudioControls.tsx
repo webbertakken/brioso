@@ -12,9 +12,9 @@ const AudioControls = ({}: Props): JSX.Element => {
           <path
             d="M3 15.75h.75V21"
             stroke="#64748B"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           ></path>
           <path
             d="M9 16.5A.75.75 0 0 0 9 15v1.5Zm-2.25-.75V15a.75.75 0 0 0-.75.75h.75Zm0 2.25H6c0 .414.336.75.75.75V18Zm0 2.25a.75.75 0 0 0 0 1.5v-1.5ZM9 15H6.75v1.5H9V15Zm-3 .75V18h1.5v-2.25H6Zm.75 3h1.5v-1.5h-1.5v1.5Zm1.5 1.5h-1.5v1.5h1.5v-1.5ZM9 19.5a.75.75 0 0 1-.75.75v1.5a2.25 2.25 0 0 0 2.25-2.25H9Zm-.75-.75a.75.75 0 0 1 .75.75h1.5a2.25 2.25 0 0 0-2.25-2.25v1.5Z"
@@ -24,8 +24,8 @@ const AudioControls = ({}: Props): JSX.Element => {
         <svg className="h-10 w-10 flex-none" fill="none">
           <circle cx="20" cy="20" r="20" fill="#0F172A"></circle>
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M13.5 13.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L16.28 27.99c-1.25.687-2.779-.217-2.779-1.643V13.653Z"
             fill="#fff"
           ></path>
@@ -49,16 +49,16 @@ const AudioControls = ({}: Props): JSX.Element => {
             d="M14 5 9 9H6a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h3l5 4V5Z"
             fill="#64748B"
             stroke="#64748B"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           ></path>
           <path
             d="M19 12c0-1.5-1-2-1-2v4s1-.5 1-2Z"
             stroke="#64748B"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           ></path>
         </svg>
         <svg className="ml-6 h-6 w-6 flex-none" fill="none">

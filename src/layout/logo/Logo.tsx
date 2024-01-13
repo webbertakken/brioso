@@ -1,5 +1,7 @@
 import styles from './Logo.module.css'
-import { ReactComponent as LogoSvg } from '../../assets/logo.svg'
+
+// @ts-expect-error
+import LogoSvg from '../../assets/logo.svg?react'
 
 const Logo = (): JSX.Element => {
   return (

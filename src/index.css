@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* Apply this to top level containers to fix their layout shift when scrollbar appears */
-@media (min-width: 1024px /* breakpoint for desktop layout */ ) {
+@media (min-width: 1024px /* breakpoint for desktop layout */) {
   .top-level-container {
     padding-left: calc(100vw - 100%);
   }

@@ -8,8 +8,8 @@ describe('App', async () => {
 
   it('renders correctly', async () => {
     // Arrange
-    await render(<App />)
-    const h1 = await screen.queryByText('Brioso')
+    render(<App />)
+    const h1 = screen.queryByText('Brioso')
 
     // Assert
     expect(h1).toBeInTheDocument()
@@ -17,8 +17,8 @@ describe('App', async () => {
 
   it('shows the button count set to 0', async () => {
     // Arrange
-    await render(<App />)
-    const button = await screen.queryByText('count is 0')
+    render(<App />)
+    const button = screen.queryByText('count is 0')
 
     // Assert
     expect(button).toBeInTheDocument()
@@ -27,8 +27,8 @@ describe('App', async () => {
   it('updates the button text after clicking it', async () => {
     // Arrange
     const user = userEvent.setup()
-    await render(<App />)
-    const button = await screen.queryByText('count is 0')
+    render(<App />)
+    const button = screen.queryByText('count is 0')
 
     // Act
     await user.click(button as HTMLElement)

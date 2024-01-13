@@ -5,7 +5,9 @@ import { Link, Outlet } from 'react-router-dom'
 import { isDevelopment } from '../core/utils/isProduction.tsx'
 import ErrorBoundary from '../core/react/display/ErrorBoundary.tsx'
 import { Copyright } from './footer/Copyright.tsx'
-import { ReactComponent as Logo } from '../assets/logo.svg'
+
+// @ts-expect-error
+import Logo from '../assets/logo.svg?react'
 
 const user = {
   name: 'Jane Doe',

@@ -5,10 +5,9 @@
   justify-content: stretch;
   padding: 0.25rem;
   border: 1px solid transparent;
-  border-bottom: 1px solid rgba(204, 204, 204, .15);
+  border-bottom: 1px solid rgba(204, 204, 204, 0.15);
   text-decoration: none;
   color: inherit;
-
 }
 
 .song.selected {
@@ -21,7 +20,6 @@
   padding: 0.25rem;
   flex-grow: 1;
 }
-
 
 .song > .icon {
   flex-grow: 0;

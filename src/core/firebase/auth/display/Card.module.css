@@ -7,7 +7,6 @@
   padding: 1.5rem;
   background: linear-gradient(220deg, #222222 0%, #333333 80%);
   border: 1px solid #121212;
-
 }
 .card.centerAlign {
   display: flex;
@@ -15,12 +14,17 @@
   justify-content: center;
   align-items: center;
 }
-.header {}
+.header {
+}
 .body {
   width: 100%;
 }
-.title {}
+.title {
+}
 
-.section {}
-.sectionHeader {}
-.sectionBody {}
+.section {
+}
+.sectionHeader {
+}
+.sectionBody {
+}
