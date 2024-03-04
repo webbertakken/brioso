@@ -7746,15 +7746,15 @@ __metadata:
   linkType: hard
 
 "reactfire@npm:^4.2.2":
-  version: 4.2.2
-  resolution: "reactfire@npm:4.2.2"
+  version: 4.2.3
+  resolution: "reactfire@npm:4.2.3"
   dependencies:
     rxfire: ^6.0.3
     rxjs: ^6.6.3 || ^7.0.1
   peerDependencies:
     firebase: ^9.0.0
     react: "*"
-  checksum: a6311df3e564e1364141a83ab053a29e1faa98223235d61439854dd36f976f8a214f5af370a7d40d02351a8039a769df496548b0501c0ff74a9d44b73eabad51
+  checksum: 7e8fa2636440ae8bbda10d194c8655538465f9d665dce68b4810637d68dc15e88a9a5f8103290055d7ddff2f54975f7c4140e80c0efc598a5b6c6dd5d0dc6fb3
   languageName: node
   linkType: hard
 
