@@ -1,5 +1,5 @@
-import styles from './Menu.module.css'
 import { Link } from 'react-router-dom'
+import styles from './Menu.module.css'
 
 interface Props {}
 

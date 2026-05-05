@@ -1,6 +1,6 @@
-import * as functionsBase from 'firebase-functions'
 import * as admin from 'firebase-admin'
 import { QuerySnapshot } from 'firebase-admin/firestore'
+import * as functionsBase from 'firebase-functions'
 import { wellKnownInstruments, wellKnownVocalParts } from './wellKnownParts'
 
 admin.initializeApp()
@@ -23,8 +23,8 @@ exports.onSongDeleted = functions.firestore
       .collection('parts')
 
     parts.get().then((querySnapshot: QuerySnapshot) => {
-      querySnapshot.forEach(async (doc) => {
-        const part = doc.data() as PartData
+      querySnapshot.forEach(async (document) => {
+        const part = document.data() as PartData
 
         const partRef = parts.doc(part.id)
         await partRef.delete()

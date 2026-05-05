@@ -1,6 +1,6 @@
 .partControls {
   display: table;
-  padding-bottom: .75rem;
+  padding-bottom: 0.75rem;
 }
 
 .row {
@@ -9,7 +9,7 @@
 
 .row > div {
   display: table-cell;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .title {
@@ -18,5 +18,5 @@
 }
 
 .controls {
-  color: #aaa
+  color: #aaa;
 }

@@ -1,8 +1,8 @@
-import styles from './Parts.module.css'
-import Columns from './Columns.tsx'
 import { PropsWithChildren } from 'react'
-import { useUser } from 'reactfire'
 import { useParams } from 'react-router-dom'
+import { useUser } from 'reactfire'
+import Columns from './Columns.tsx'
+import styles from './Parts.module.css'
 
 const Parts = ({ children }: PropsWithChildren): JSX.Element => {
   const { data: user } = useUser()

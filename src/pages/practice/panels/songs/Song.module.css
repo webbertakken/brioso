@@ -5,10 +5,9 @@
   justify-content: stretch;
   padding: 0.25rem;
   border: 1px solid transparent;
-  border-bottom: 1px solid rgba(204, 204, 204, .15);
+  border-bottom: 1px solid rgba(204, 204, 204, 0.15);
   text-decoration: none;
   color: inherit;
-
 }
 
 .song.selected {
@@ -22,13 +21,14 @@
   flex-grow: 1;
 }
 
-
 .song > .icon {
   flex-grow: 0;
   width: 32px;
   padding: 0;
   text-align: center;
-  transition: opacity 0.15s ease-in-out, filter 0.15s ease-in-out;
+  transition:
+    opacity 0.15s ease-in-out,
+    filter 0.15s ease-in-out;
 }
 
 .song:not(:hover):not(.selected) > .icon {

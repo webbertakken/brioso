@@ -1,17 +1,16 @@
 // noinspection PointlessBooleanExpressionJS
 
+import cx from 'classnames'
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+// @ts-ignore
+import type { User, UserInfo, auth } from 'firebase/compat'
 import * as React from 'react'
 import { useAuth, useSigninCheck } from 'reactfire'
+import { useNotify } from '../../notifications/hooks/useNotify.tsx'
+import styles from './Authentication.module.css'
 import { WideButton } from './display/Button.tsx'
 import { Card, CardSection } from './display/Card.tsx'
 import { LoadingSpinner } from './display/LoadingSpinner.tsx'
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
-import styles from './Authentication.module.css'
-import cx from 'classnames'
-import { useNotify } from '../../notifications/hooks/useNotify.tsx'
-
-// @ts-ignore
-import type { User, UserInfo, auth } from 'firebase/compat'
 type Auth = auth.Auth
 
 export const AuthWrapper = ({

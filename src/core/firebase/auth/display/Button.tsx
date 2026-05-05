@@ -1,6 +1,6 @@
+import cx from 'classnames'
 import React from 'react'
 import styles from './Button.module.css'
-import cx from 'classnames'
 
 interface Props {
   label: string

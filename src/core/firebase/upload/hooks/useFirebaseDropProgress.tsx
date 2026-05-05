@@ -1,5 +1,5 @@
-import { useStorageTask } from 'reactfire'
 import { StorageReference, UploadTask, UploadTaskSnapshot } from '@firebase/storage'
+import { useStorageTask } from 'reactfire'
 
 export function useFirebaseDropProgress(
   uploadTask: UploadTask,

@@ -1,11 +1,11 @@
-import styles from './Song.module.css'
-import { Link } from 'react-router-dom'
 import cx from 'classnames'
-import { useFirestore, useUser } from 'reactfire'
-import { Inventory } from '../../../../model/inventory.ts'
 import { doc, deleteDoc } from 'firebase/firestore'
-import { useNotify } from '../../../../core/notifications/hooks/useNotify.tsx'
 import { SyntheticEvent } from 'react'
+import { Link } from 'react-router-dom'
+import { useFirestore, useUser } from 'reactfire'
+import { useNotify } from '../../../../core/notifications/hooks/useNotify.tsx'
+import { Inventory } from '../../../../model/inventory.ts'
+import styles from './Song.module.css'
 
 interface Props {
   title: string

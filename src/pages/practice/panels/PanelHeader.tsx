@@ -1,5 +1,5 @@
-import styles from './Panel.module.css'
 import React from 'react'
+import styles from './Panel.module.css'
 
 interface Props {
   icon?: React.ReactNode

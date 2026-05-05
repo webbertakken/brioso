@@ -1,5 +1,5 @@
-import styles from './PartControls.module.css'
 import { ChangeEvent, useEffect, useMemo, useState } from 'react'
+import styles from './PartControls.module.css'
 
 interface Props {
   getRefMap: () => Map<string, HTMLAudioElement>
@@ -17,7 +17,6 @@ const PartControls = ({ getRefMap, songId, partId, parts }: Props): JSX.Element 
       const audio = getRefMap().get(partId)
       if (audio) audio.volume = volume
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [getRefMap, parts],
   )
 
@@ -29,7 +28,6 @@ const PartControls = ({ getRefMap, songId, partId, parts }: Props): JSX.Element 
 
     // Other parts volume
     if (otherParts?.length) otherParts.forEach(({ id }) => setVolume(id, otherVolume))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [partId, getRefMap, parts, setVolume])
 
   const updateMyVolume = (e: ChangeEvent<HTMLInputElement>) => {
