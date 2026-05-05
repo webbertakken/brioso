@@ -1,9 +1,9 @@
-import styles from './Part.module.css'
 import cx from 'classnames'
-import { Link } from 'react-router-dom'
 import { SyntheticEvent, useState } from 'react'
-import { useFile } from '../../../../core/firebase/upload/hooks/useFile.tsx'
+import { Link } from 'react-router-dom'
 import { LoadingSpinner } from '../../../../core/firebase/auth/display/LoadingSpinner.tsx'
+import { useFile } from '../../../../core/firebase/upload/hooks/useFile.tsx'
+import styles from './Part.module.css'
 
 interface Props {
   id: string

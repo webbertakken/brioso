@@ -1,13 +1,13 @@
-import songStyles from './Song.module.css'
-import styles from './AddSong.module.css'
 import cx from 'classnames'
-import { useFirestore, useUser } from 'reactfire'
 import { collection, doc, DocumentReference, getDoc, setDoc } from 'firebase/firestore'
-import { Inventory } from '../../../../model/inventory.ts'
 import { SyntheticEvent, useCallback, useState } from 'react'
-import { slugify } from '../../../../core/utils/slugify.ts'
-import { useNotify } from '../../../../core/notifications/hooks/useNotify.tsx'
 import { useNavigate } from 'react-router-dom'
+import { useFirestore, useUser } from 'reactfire'
+import { useNotify } from '../../../../core/notifications/hooks/useNotify.tsx'
+import { slugify } from '../../../../core/utils/slugify.ts'
+import { Inventory } from '../../../../model/inventory.ts'
+import styles from './AddSong.module.css'
+import songStyles from './Song.module.css'
 
 interface Props {}
 

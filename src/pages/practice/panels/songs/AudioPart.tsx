@@ -1,9 +1,9 @@
 import { useSpring, config, animated, useSpringRef, useChain } from '@react-spring/web'
+import { useEffect, useState } from 'react'
+import { FileUpload } from '../../../../core/firebase/upload/hooks/useFirebaseDrop.tsx'
+import { useFirebaseDropProgress } from '../../../../core/firebase/upload/hooks/useFirebaseDropProgress.tsx'
 import { useComponentSize } from '../../../../core/react/hooks/useComponentSize.tsx'
 import styles from './AudioPart.module.scss'
-import { useEffect, useState } from 'react'
-import { useFirebaseDropProgress } from '../../../../core/firebase/upload/hooks/useFirebaseDropProgress.tsx'
-import { FileUpload } from '../../../../core/firebase/upload/hooks/useFirebaseDrop.tsx'
 
 interface Props {
   file: FileUpload

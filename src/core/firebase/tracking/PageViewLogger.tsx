@@ -1,7 +1,7 @@
-import { useAnalytics } from 'reactfire'
+import { logEvent } from 'firebase/analytics'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { logEvent } from 'firebase/analytics'
+import { useAnalytics } from 'reactfire'
 
 const PageViewLogger = () => {
   const analytics = useAnalytics()

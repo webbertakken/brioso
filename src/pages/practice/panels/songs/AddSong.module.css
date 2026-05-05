@@ -2,7 +2,8 @@
   filter: grayscale(100%);
 }
 
-.addSong:focus-within, .addSong:hover {
+.addSong:focus-within,
+.addSong:hover {
   filter: grayscale(0%);
 }
 
@@ -17,14 +18,15 @@
 
 .addSong .input {
   font-size: inherit;
-  background: rgba(255, 255, 255, .075);
+  background: rgba(255, 255, 255, 0.075);
   border-radius: 5px;
-  padding: 0.25rem .5rem;
+  padding: 0.25rem 0.5rem;
   border: none;
   width: 100%;
 }
 
-.addSong:focus-within .input, .addSong:hover .input {
+.addSong:focus-within .input,
+.addSong:hover .input {
   filter: grayscale(0%);
-  background: rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, 0.1);
 }

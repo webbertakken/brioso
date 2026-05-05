@@ -1,12 +1,12 @@
+import { UploadTaskSnapshot, UploadTask, StorageReference } from '@firebase/storage'
+import { doc, DocumentReference, getDoc, setDoc } from 'firebase/firestore'
+import { ref, uploadBytesResumable } from 'firebase/storage'
+import { useCallback } from 'react'
 import { DropEvent, FileRejection } from 'react-dropzone'
 import { useFirestore, useStorage, useUser } from 'reactfire'
-import { useCallback } from 'react'
-import { ref, uploadBytesResumable } from 'firebase/storage'
 import { useNotify } from '../../../notifications/hooks/useNotify.tsx'
-import { slugify } from '../../../utils/slugify'
-import { doc, DocumentReference, getDoc, setDoc } from 'firebase/firestore'
-import { UploadTaskSnapshot, UploadTask, StorageReference } from '@firebase/storage'
 import { isDevelopment } from '../../../utils/isProduction.tsx'
+import { slugify } from '../../../utils/slugify'
 
 export type FileUpload = File & {
   preview: string

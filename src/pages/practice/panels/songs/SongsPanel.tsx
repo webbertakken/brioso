@@ -1,11 +1,11 @@
-import Panel from '../Panel.tsx'
-import Song from './Song.tsx'
-import { useParams } from 'react-router-dom'
 import { collection } from 'firebase/firestore'
+import { CollectionReference } from 'firebase/firestore'
+import { useParams } from 'react-router-dom'
 import { useFirestore, useFirestoreCollectionData, useUser } from 'reactfire'
 import { Inventory } from '../../../../model/inventory.ts'
+import Panel from '../Panel.tsx'
 import AddSong from './AddSong.tsx'
-import { CollectionReference } from 'firebase/firestore'
+import Song from './Song.tsx'
 
 interface Props {}
 

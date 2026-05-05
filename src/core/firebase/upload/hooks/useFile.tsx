@@ -1,6 +1,6 @@
-import { useStorage } from 'reactfire'
 import { ref, getDownloadURL, getMetadata, FullMetadata } from 'firebase/storage'
 import { useEffect, useState } from 'react'
+import { useStorage } from 'reactfire'
 
 export function useFile(fileUploadFullPath: string) {
   const storage = useStorage()
@@ -27,7 +27,6 @@ export function useFile(fileUploadFullPath: string) {
       .finally(() => setLoading(false))
 
     // the ref changes during the lifetime of the component
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fileUploadFullPath])
 
   return { loading, file }

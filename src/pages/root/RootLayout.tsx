@@ -1,10 +1,10 @@
-import styles from './RootLayout.module.css'
+import { PropsWithChildren } from 'react'
 import { Outlet } from 'react-router-dom'
+import PageViewLogger from '../../core/firebase/tracking/PageViewLogger.tsx'
+import ErrorBoundary from '../../core/react/display/ErrorBoundary.tsx'
 import Logo from './logo/Logo.tsx'
 import Menu from './Menu.tsx'
-import ErrorBoundary from '../../core/react/display/ErrorBoundary.tsx'
-import PageViewLogger from '../../core/firebase/tracking/PageViewLogger.tsx'
-import { PropsWithChildren } from 'react'
+import styles from './RootLayout.module.css'
 
 const RootLayout = ({ children }: PropsWithChildren): JSX.Element => {
   return (

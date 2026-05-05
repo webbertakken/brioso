@@ -1,8 +1,10 @@
+import { FirebaseApp } from '@firebase/app'
+import { getAnalytics } from 'firebase/analytics'
 import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check'
 import { getAuth, connectAuthEmulator } from 'firebase/auth'
 import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
 import { getStorage, connectStorageEmulator } from 'firebase/storage'
-import { getAnalytics } from 'firebase/analytics'
+import { PropsWithChildren } from 'react'
 import {
   AppCheckProvider,
   FirestoreProvider,
@@ -14,8 +16,6 @@ import {
 } from 'reactfire'
 import config from '../../config.tsx'
 import { isProduction } from '../utils/isProduction.tsx'
-import { FirebaseApp } from '@firebase/app'
-import { PropsWithChildren } from 'react'
 
 const ProductionOnlyAppCheck = ({ children, app }: PropsWithChildren<{ app: FirebaseApp }>) =>
   isProduction() ? (

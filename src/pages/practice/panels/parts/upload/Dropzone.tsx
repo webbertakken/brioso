@@ -1,17 +1,17 @@
 // noinspection DuplicatedCode
 
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import cx from 'classnames'
 import { useEffect, useMemo, useReducer } from 'react'
 import { useDropzone } from 'react-dropzone'
-import cx from 'classnames'
+import { useParams } from 'react-router-dom'
+import { useUser } from 'reactfire'
 import {
   FileUpload,
   useFirebaseDrop,
 } from '../../../../../core/firebase/upload/hooks/useFirebaseDrop.tsx'
-import AudioPart from '../../songs/AudioPart.tsx'
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Inventory } from '../../../../../model/inventory.ts'
-import { useParams } from 'react-router-dom'
-import { useUser } from 'reactfire'
+import AudioPart from '../../songs/AudioPart.tsx'
 
 const initialState: FileUpload[] = []
 
