@@ -1843,8 +1843,8 @@ __metadata:
   linkType: hard
 
 "@reduxjs/toolkit@npm:^1.9.5":
-  version: 1.9.5
-  resolution: "@reduxjs/toolkit@npm:1.9.5"
+  version: 1.9.7
+  resolution: "@reduxjs/toolkit@npm:1.9.7"
   dependencies:
     immer: "npm:^9.0.21"
     redux: "npm:^4.2.1"
@@ -1858,7 +1858,7 @@ __metadata:
       optional: true
     react-redux:
       optional: true
-  checksum: 10/ac24173de599b830232da5e040ea2b898c34cc803cb219e537ce15c5b914c85dfdb97f8f7015ea4e8cc9110430e2a081766b0dcbc1e71f99639b8bec136d3499
+  checksum: 10/11c718270bb378e5b26e172eb84cc549d6f263748b6f330b07ee9c366c6474b013fd410e5b2f65a5742e73b7873a3ac14e06cae4bb01480ba03b423c4fd92583
   languageName: node
   linkType: hard
 
