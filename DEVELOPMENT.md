@@ -2,21 +2,13 @@
 
 ## Prerequisites
 
-- Volta
+- [mise](https://mise.jdx.dev): installs the Node and yarn versions pinned in `mise.toml`.
 
 ## Setup
 
-You must use `node@16` for your global node version in order for the `emulators` in `firebase-tools`
-to work.
-
 ```bash
-volta install node@16
-```
-
-You must also have the latest `yarn` globally installed (4-beta is fine)
-
-```bash
-volta install yarn
+mise install
+yarn install
 ```
 
 Install `firebase-tools` globally.
@@ -26,6 +18,12 @@ npm install -g firebase-tools
 ```
 
 **Troubleshooting**: remove `~/.cache` before reinstalling `firebase-tools`.
+
+## Node versions
+
+- The toolchain (dev server, tests, the Hosting build and CI) runs on the Node in `mise.toml`.
+- Cloud Functions run on the Node in `engines.node` of `functions/package.json`. That is the newest
+  runtime Cloud Functions (1st gen) offers, and lower than the toolchain's.
 
 ## Develop
 
@@ -44,12 +42,12 @@ firebase deploy
 Upgrade Node
 
 ```bash
-volta pin node@lts
+mise use node@<version>
 ```
 
-Upgrade Yarn
+Upgrade Yarn: pin it in `mise.toml`, then set the same version in `packageManager`
 
 ```bash
-yarn set version stable
-volta pin yarn
+mise use yarn@<version>
+npm pkg set packageManager=yarn@<version>
 ```
